@@ -1,0 +1,12 @@
+name: monad 
+version: 0.0.0
+homepage: https://github.com/morloclib/monad
+synopsis: Core functions for monad processing
+description: A stub for monad processing
+category: basic
+license: MIT
+author: "Zebulun Arendsee"
+maintainer: "zbwrnz@gmail.com"
+github: https://github.com/morloclib/monad
+bug-reports: https://github.com/morloclib/monad
+gcc-flags: "c++17"

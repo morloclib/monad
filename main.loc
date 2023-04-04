@@ -1,4 +1,4 @@
-module monad
+module monad (*)
 
 packMaybe   :: pack   => [a] -> Maybe a
 unpackMaybe :: unpack => Maybe a -> [a]

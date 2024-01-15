@@ -1,10 +1,10 @@
 module monad (*)
 
+type Py => Maybe a = "Optional[$1]" a
+type Py => Either a b = "Union[$1,$2]" a b
+
 packMaybe   :: pack   => [a] -> Maybe a
 unpackMaybe :: unpack => Maybe a -> [a]
-
-packMaybe   Py :: pack   => [a] -> "Optional[$1]" a
-unpackMaybe Py :: unpack => "Optional[$1]" a -> [a]
 
 maybe :: b -> (a -> b) -> Maybe a -> b
 catMaybes :: [Maybe a] -> [a]
@@ -13,15 +13,12 @@ isNothing :: Maybe a -> Bool
 fromJust :: Maybe a -> a -- unsafe
 just :: a -> Maybe a
 nothing :: Maybe a
+
+-- ultimately, this should be replaced with a Monad typeclass
 bindMaybe :: Maybe a -> (a -> Maybe b) -> Maybe b
-
-
 
 packEither   :: pack   => ([a],[b]) -> Either a b
 unpackEither :: unpack => Either a b -> ([a],[b])
-
-packEither   Py :: pack   => ([a],[b]) -> "Union[$1,$2]" a b
-unpackEither Py :: unpack => "Union[$1,$2]" a b -> ([a],[b])
 
 lefts :: [Either a b] -> [a]
 rights :: [Either a b] -> [b]
